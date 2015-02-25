@@ -1,0 +1,1871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{F4B587F8-6446-422A-A5CD-D41021AA6F03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>CGPA_Tracker</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".nuget\NuGet.Config" />
+    <None Include=".nuget\NuGet.targets" />
+    <None Include="AppPackages\CGPA_4.0.0.0_AnyCPU_bundle.appxupload" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.ps1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\cs-CZ\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\de-DE\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\en-US\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\es-ES\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\fr-FR\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\it-IT\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\ja-JP\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\ko-KR\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\pl-PL\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\pt-BR\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\ru-RU\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\tr-TR\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\zh-CN\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\zh-TW\Add-AppDevPackage.psd1" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\CGPA_4.0.0.0_AnyCPU.appxbundle" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\CGPA_4.0.0.0_AnyCPU.appxsym" />
+    <None Include="AppPackages\CGPA_4.0.0.0_Test\CGPA_4.0.0.0_AnyCPU.cer" />
+    <None Include="Backup\CGPA\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CGPA\AppPackages.zip" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU.appxupload" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_bundle.appxupload" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.ps1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\cs-CZ\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\de-DE\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\en-US\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\es-ES\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\fr-FR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\it-IT\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\ja-JP\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\ko-KR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\pl-PL\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\pt-BR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\ru-RU\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\tr-TR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\zh-CN\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\Add-AppDevPackage.resources\zh-TW\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\CGPA_2.1.0.5_AnyCPU.appx" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\CGPA_2.1.0.5_AnyCPU.appxsym" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_AnyCPU_Test\CGPA_2.1.0.5_AnyCPU.cer" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.ps1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\cs-CZ\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\de-DE\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\en-US\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\es-ES\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\fr-FR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\it-IT\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\ja-JP\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\ko-KR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\pl-PL\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\pt-BR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\ru-RU\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\tr-TR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\zh-CN\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\Add-AppDevPackage.resources\zh-TW\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\CGPA_2.1.0.5_AnyCPU.appxbundle" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\CGPA_2.1.0.5_AnyCPU.appxsym" />
+    <None Include="CGPA\AppPackages\CGPA_2.1.0.5_Test\CGPA_2.1.0.5_AnyCPU.cer" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_AnyCPU_bundle.appxupload" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.ps1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\cs-CZ\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\de-DE\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\en-US\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\es-ES\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\fr-FR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\it-IT\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\ja-JP\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\ko-KR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\pl-PL\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\pt-BR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\ru-RU\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\tr-TR\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\zh-CN\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\Add-AppDevPackage.resources\zh-TW\Add-AppDevPackage.psd1" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\CGPA_4.0.0.0_AnyCPU.appxbundle" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\CGPA_4.0.0.0_AnyCPU.appxsym" />
+    <None Include="CGPA\AppPackages\CGPA_4.0.0.0_Test\CGPA_4.0.0.0_AnyCPU.cer" />
+    <None Include="CGPA\bin\ARM\Release\about.xbf" />
+    <None Include="CGPA\bin\ARM\Release\App.xbf" />
+    <None Include="CGPA\bin\ARM\Release\AppbarContent.xbf" />
+    <None Include="CGPA\bin\ARM\Release\CGPA.build.appxrecipe" />
+    <None Include="CGPA\bin\ARM\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\ARM\Release\Ctext.xbf" />
+    <None Include="CGPA\bin\ARM\Release\gpa.xbf" />
+    <None Include="CGPA\bin\ARM\Release\Know.xbf" />
+    <None Include="CGPA\bin\ARM\Release\MainPage.xbf" />
+    <None Include="CGPA\bin\ARM\Release\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\ARM\Release\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\ARM\Release\personald.xbf" />
+    <None Include="CGPA\bin\ARM\Release\profile.xbf" />
+    <None Include="CGPA\bin\ARM\Release\resources.pri" />
+    <None Include="CGPA\bin\ARM\Release\scale.xbf" />
+    <None Include="CGPA\bin\ARM\Release\sgpa.xbf" />
+    <None Include="CGPA\bin\Debug\about.xbf" />
+    <None Include="CGPA\bin\Debug\AccFly.xbf" />
+    <None Include="CGPA\bin\Debug\App.xbf" />
+    <None Include="CGPA\bin\Debug\AppbarContent.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\about.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\AccFly.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\App.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\AppbarContent.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\Ctext.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\fly.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\gpa.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\Know.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\login.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\MainPage.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\Debug\AppX\Microsoft.Advertising.WinRT.UI\AdSettingsFlyout.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\Microsoft.Advertising.WinRT.UI\Themes\Generic.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\Debug\AppX\personald.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\profile.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\resources.pri" />
+    <None Include="CGPA\bin\Debug\AppX\scale.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\sgpa.xbf" />
+    <None Include="CGPA\bin\Debug\AppX\vs.appxrecipe" />
+    <None Include="CGPA\bin\Debug\CGPA.build.appxrecipe" />
+    <None Include="CGPA\bin\Debug\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\Debug\Ctext.xbf" />
+    <None Include="CGPA\bin\Debug\Facebook.Client.pri" />
+    <None Include="CGPA\bin\Debug\fly.xbf" />
+    <None Include="CGPA\bin\Debug\gpa.xbf" />
+    <None Include="CGPA\bin\Debug\Know.xbf" />
+    <None Include="CGPA\bin\Debug\login.xbf" />
+    <None Include="CGPA\bin\Debug\MainPage.xbf" />
+    <None Include="CGPA\bin\Debug\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\Debug\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\Debug\personald.xbf" />
+    <None Include="CGPA\bin\Debug\profile.xbf" />
+    <None Include="CGPA\bin\Debug\resources.pri" />
+    <None Include="CGPA\bin\Debug\scale.xbf" />
+    <None Include="CGPA\bin\Debug\sgpa.xbf" />
+    <None Include="CGPA\bin\Release\about.xbf" />
+    <None Include="CGPA\bin\Release\AccFly.xbf" />
+    <None Include="CGPA\bin\Release\App.xbf" />
+    <None Include="CGPA\bin\Release\AppbarContent.xbf" />
+    <None Include="CGPA\bin\Release\AppX\about.xbf" />
+    <None Include="CGPA\bin\Release\AppX\AccFly.xbf" />
+    <None Include="CGPA\bin\Release\AppX\App.xbf" />
+    <None Include="CGPA\bin\Release\AppX\AppbarContent.xbf" />
+    <None Include="CGPA\bin\Release\AppX\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\Release\AppX\fly.xbf" />
+    <None Include="CGPA\bin\Release\AppX\gpa.xbf" />
+    <None Include="CGPA\bin\Release\AppX\Know.xbf" />
+    <None Include="CGPA\bin\Release\AppX\login.xbf" />
+    <None Include="CGPA\bin\Release\AppX\MainPage.xbf" />
+    <None Include="CGPA\bin\Release\AppX\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\Release\AppX\Microsoft.Advertising.WinRT.UI\AdSettingsFlyout.xbf" />
+    <None Include="CGPA\bin\Release\AppX\Microsoft.Advertising.WinRT.UI\Themes\Generic.xbf" />
+    <None Include="CGPA\bin\Release\AppX\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\Release\AppX\personald.xbf" />
+    <None Include="CGPA\bin\Release\AppX\profile.xbf" />
+    <None Include="CGPA\bin\Release\AppX\resources.pri" />
+    <None Include="CGPA\bin\Release\AppX\scale.xbf" />
+    <None Include="CGPA\bin\Release\AppX\sgpa.xbf" />
+    <None Include="CGPA\bin\Release\AppX\vs.appxrecipe" />
+    <None Include="CGPA\bin\Release\CGPA.build.appxrecipe" />
+    <None Include="CGPA\bin\Release\CGPA.exe.lastcodeanalysissucceeded" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_AnyCPU.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-af.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-am.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ar.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-as.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-az-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-be.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-bg.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-bn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-bs.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ca.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-cs.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-cy.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-da.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-de.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-el.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-es.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-et.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-eu.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-fa.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-fi.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-fil-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-fr.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ga.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-gl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-gu.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ha-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-he.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-hi.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-hr.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-hu.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-hy.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-id.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ig-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-is.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-it.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ja.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ka.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-kk.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-km.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-kn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ko.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-kok.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ku-arab.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ky-cyrl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-lb.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-lt.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-lv.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-mi-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-mk.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ml.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-mn-cyrl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-mr.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ms.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-mt.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-nb.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ne.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-nl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-nn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-nso.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-or.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-pa-arab.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-pa.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-pl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-prs-arab.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-pt.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-quc-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-quz-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ro.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ru.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-rw.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sd-arab.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-si.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sk.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sq.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sr-cyrl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sr-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sv.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-sw.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ta.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-te.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-tg-cyrl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-th.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ti.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-tk-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-tn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-tr.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-tt-cyrl.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ug-arab.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-uk.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-ur.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-uz-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-vi.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-wo-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-xh.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-yo-latn.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-zh-hans.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-zh-hant.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_language-zu.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_scale-140.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.0.0.0_Bundle\CGPA_2.0.0.0_scale-180.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.1.0.5_Bundle\CGPA_2.1.0.5_AnyCPU.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.1.0.5_Bundle\CGPA_2.1.0.5_scale-140.appx" />
+    <None Include="CGPA\bin\Release\CGPA_2.1.0.5_Bundle\CGPA_2.1.0.5_scale-180.appx" />
+    <None Include="CGPA\bin\Release\CGPA_4.0.0.0_Bundle\CGPA_4.0.0.0_AnyCPU.appx" />
+    <None Include="CGPA\bin\Release\CGPA_4.0.0.0_Bundle\CGPA_4.0.0.0_scale-140.appx" />
+    <None Include="CGPA\bin\Release\CGPA_4.0.0.0_Bundle\CGPA_4.0.0.0_scale-180.appx" />
+    <None Include="CGPA\bin\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\Release\Ctext.xbf" />
+    <None Include="CGPA\bin\Release\Facebook.Client.pri" />
+    <None Include="CGPA\bin\Release\fly.xbf" />
+    <None Include="CGPA\bin\Release\gpa.xbf" />
+    <None Include="CGPA\bin\Release\Know.xbf" />
+    <None Include="CGPA\bin\Release\login.xbf" />
+    <None Include="CGPA\bin\Release\MainPage.xbf" />
+    <None Include="CGPA\bin\Release\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\Release\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\Release\personald.xbf" />
+    <None Include="CGPA\bin\Release\profile.xbf" />
+    <None Include="CGPA\bin\Release\resources.pri" />
+    <None Include="CGPA\bin\Release\scale.xbf" />
+    <None Include="CGPA\bin\Release\sgpa.xbf" />
+    <None Include="CGPA\bin\x64\Release\about.xbf" />
+    <None Include="CGPA\bin\x64\Release\App.xbf" />
+    <None Include="CGPA\bin\x64\Release\AppbarContent.xbf" />
+    <None Include="CGPA\bin\x64\Release\CGPA.build.appxrecipe" />
+    <None Include="CGPA\bin\x64\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\x64\Release\Ctext.xbf" />
+    <None Include="CGPA\bin\x64\Release\gpa.xbf" />
+    <None Include="CGPA\bin\x64\Release\Know.xbf" />
+    <None Include="CGPA\bin\x64\Release\MainPage.xbf" />
+    <None Include="CGPA\bin\x64\Release\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\x64\Release\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\x64\Release\personald.xbf" />
+    <None Include="CGPA\bin\x64\Release\profile.xbf" />
+    <None Include="CGPA\bin\x64\Release\resources.pri" />
+    <None Include="CGPA\bin\x64\Release\scale.xbf" />
+    <None Include="CGPA\bin\x64\Release\sgpa.xbf" />
+    <None Include="CGPA\bin\x86\Release\about.xbf" />
+    <None Include="CGPA\bin\x86\Release\App.xbf" />
+    <None Include="CGPA\bin\x86\Release\AppbarContent.xbf" />
+    <None Include="CGPA\bin\x86\Release\CGPA.build.appxrecipe" />
+    <None Include="CGPA\bin\x86\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\bin\x86\Release\Ctext.xbf" />
+    <None Include="CGPA\bin\x86\Release\gpa.xbf" />
+    <None Include="CGPA\bin\x86\Release\Know.xbf" />
+    <None Include="CGPA\bin\x86\Release\MainPage.xbf" />
+    <None Include="CGPA\bin\x86\Release\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\bin\x86\Release\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\bin\x86\Release\personald.xbf" />
+    <None Include="CGPA\bin\x86\Release\profile.xbf" />
+    <None Include="CGPA\bin\x86\Release\resources.pri" />
+    <None Include="CGPA\bin\x86\Release\scale.xbf" />
+    <None Include="CGPA\bin\x86\Release\sgpa.xbf" />
+    <None Include="CGPA\CGPA_StoreKey.pfx" />
+    <None Include="CGPA\CGPA_TemporaryKey.pfx" />
+    <None Include="CGPA\obj\ARM\Release\about.xbf" />
+    <None Include="CGPA\obj\ARM\Release\App.xbf" />
+    <None Include="CGPA\obj\ARM\Release\AppbarContent.xbf" />
+    <None Include="CGPA\obj\ARM\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\obj\ARM\Release\Ctext.xbf" />
+    <None Include="CGPA\obj\ARM\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="CGPA\obj\ARM\Release\gpa.xbf" />
+    <None Include="CGPA\obj\ARM\Release\Know.xbf" />
+    <None Include="CGPA\obj\ARM\Release\layout.resfiles" />
+    <None Include="CGPA\obj\ARM\Release\layout.resfiles.intermediate" />
+    <None Include="CGPA\obj\ARM\Release\MainPage.xbf" />
+    <None Include="CGPA\obj\ARM\Release\personald.xbf" />
+    <None Include="CGPA\obj\ARM\Release\pri.resfiles" />
+    <None Include="CGPA\obj\ARM\Release\pri.resfiles.intermediate" />
+    <None Include="CGPA\obj\ARM\Release\priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\ARM\Release\profile.xbf" />
+    <None Include="CGPA\obj\ARM\Release\qualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\ARM\Release\resources.resfiles" />
+    <None Include="CGPA\obj\ARM\Release\resources.resfiles.intermediate" />
+    <None Include="CGPA\obj\ARM\Release\scale.xbf" />
+    <None Include="CGPA\obj\ARM\Release\sgpa.xbf" />
+    <None Include="CGPA\obj\Debug\about.xbf" />
+    <None Include="CGPA\obj\Debug\AccFly.xbf" />
+    <None Include="CGPA\obj\Debug\App.xbf" />
+    <None Include="CGPA\obj\Debug\AppbarContent.xbf" />
+    <None Include="CGPA\obj\Debug\CGPA.csproj.GenerateResource.Cache" />
+    <None Include="CGPA\obj\Debug\CGPA.csprojResolveAssemblyReference.cache" />
+    <None Include="CGPA\obj\Debug\Common\StandardStyles.xbf" />
+    <None Include="CGPA\obj\Debug\Ctext.xbf" />
+    <None Include="CGPA\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="CGPA\obj\Debug\fly.xbf" />
+    <None Include="CGPA\obj\Debug\gpa.xbf" />
+    <None Include="CGPA\obj\Debug\Know.xbf" />
+    <None Include="CGPA\obj\Debug\LanguageQualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\Debug\layout.resfiles" />
+    <None Include="CGPA\obj\Debug\layout.resfiles.intermediate" />
+    <None Include="CGPA\obj\Debug\login.xbf" />
+    <None Include="CGPA\obj\Debug\MainPage.xbf" />
+    <None Include="CGPA\obj\Debug\personald.xbf" />
+    <None Include="CGPA\obj\Debug\pri.resfiles" />
+    <None Include="CGPA\obj\Debug\pri.resfiles.intermediate" />
+    <None Include="CGPA\obj\Debug\priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\Debug\profile.xbf" />
+    <None Include="CGPA\obj\Debug\qualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\Debug\resources.resfiles" />
+    <None Include="CGPA\obj\Debug\resources.resfiles.intermediate" />
+    <None Include="CGPA\obj\Debug\scale.xbf" />
+    <None Include="CGPA\obj\Debug\sgpa.xbf" />
+    <None Include="CGPA\obj\Debug\XamlTypeInfo.g.cs.backup" />
+    <None Include="CGPA\obj\Release\about.xbf" />
+    <None Include="CGPA\obj\Release\AccFly.xbf" />
+    <None Include="CGPA\obj\Release\App.xbf" />
+    <None Include="CGPA\obj\Release\AppbarContent.xbf" />
+    <None Include="CGPA\obj\Release\CGPA.csproj.GenerateResource.Cache" />
+    <None Include="CGPA\obj\Release\CGPA.csprojResolveAssemblyReference.cache" />
+    <None Include="CGPA\obj\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\obj\Release\Ctext.xbf" />
+    <None Include="CGPA\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="CGPA\obj\Release\filemap.pri" />
+    <None Include="CGPA\obj\Release\filemap.priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\Release\filemap.scale-140.pri" />
+    <None Include="CGPA\obj\Release\filemap.scale-180.pri" />
+    <None Include="CGPA\obj\Release\fly.xbf" />
+    <None Include="CGPA\obj\Release\gpa.xbf" />
+    <None Include="CGPA\obj\Release\Know.xbf" />
+    <None Include="CGPA\obj\Release\LanguageQualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\Release\layout.resfiles" />
+    <None Include="CGPA\obj\Release\layout.resfiles.intermediate" />
+    <None Include="CGPA\obj\Release\login.xbf" />
+    <None Include="CGPA\obj\Release\MainPage.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\about.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\AccFly.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\App.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\AppbarContent.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\Common\StandardStyles.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\fly.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\gpa.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\Know.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\login.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\MainPage.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\Microsoft.Advertising.WinRT.UI.winmd" />
+    <None Include="CGPA\obj\Release\PackageLayout\Microsoft.Advertising.WinRT.UI\AdSettingsFlyout.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\Microsoft.Advertising.WinRT.UI\Themes\Generic.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\MicrosoftAdvertising.winmd" />
+    <None Include="CGPA\obj\Release\PackageLayout\personald.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\profile.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\scale.xbf" />
+    <None Include="CGPA\obj\Release\PackageLayout\sgpa.xbf" />
+    <None Include="CGPA\obj\Release\personald.xbf" />
+    <None Include="CGPA\obj\Release\pri.resfiles" />
+    <None Include="CGPA\obj\Release\pri.resfiles.intermediate" />
+    <None Include="CGPA\obj\Release\priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\Release\profile.xbf" />
+    <None Include="CGPA\obj\Release\qualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\Release\resources.resfiles" />
+    <None Include="CGPA\obj\Release\resources.resfiles.intermediate" />
+    <None Include="CGPA\obj\Release\scale.xbf" />
+    <None Include="CGPA\obj\Release\sgpa.xbf" />
+    <None Include="CGPA\obj\Release\split.language-af.pri" />
+    <None Include="CGPA\obj\Release\split.language-am.pri" />
+    <None Include="CGPA\obj\Release\split.language-ar.pri" />
+    <None Include="CGPA\obj\Release\split.language-as.pri" />
+    <None Include="CGPA\obj\Release\split.language-az-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-be.pri" />
+    <None Include="CGPA\obj\Release\split.language-bg.pri" />
+    <None Include="CGPA\obj\Release\split.language-bn.pri" />
+    <None Include="CGPA\obj\Release\split.language-bs.pri" />
+    <None Include="CGPA\obj\Release\split.language-ca.pri" />
+    <None Include="CGPA\obj\Release\split.language-cs.pri" />
+    <None Include="CGPA\obj\Release\split.language-cy.pri" />
+    <None Include="CGPA\obj\Release\split.language-da.pri" />
+    <None Include="CGPA\obj\Release\split.language-de.pri" />
+    <None Include="CGPA\obj\Release\split.language-el.pri" />
+    <None Include="CGPA\obj\Release\split.language-es.pri" />
+    <None Include="CGPA\obj\Release\split.language-et.pri" />
+    <None Include="CGPA\obj\Release\split.language-eu.pri" />
+    <None Include="CGPA\obj\Release\split.language-fa.pri" />
+    <None Include="CGPA\obj\Release\split.language-fi.pri" />
+    <None Include="CGPA\obj\Release\split.language-fil-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-fr.pri" />
+    <None Include="CGPA\obj\Release\split.language-ga.pri" />
+    <None Include="CGPA\obj\Release\split.language-gd-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-gl.pri" />
+    <None Include="CGPA\obj\Release\split.language-gu.pri" />
+    <None Include="CGPA\obj\Release\split.language-ha-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-he.pri" />
+    <None Include="CGPA\obj\Release\split.language-hi.pri" />
+    <None Include="CGPA\obj\Release\split.language-hr.pri" />
+    <None Include="CGPA\obj\Release\split.language-hu.pri" />
+    <None Include="CGPA\obj\Release\split.language-hy.pri" />
+    <None Include="CGPA\obj\Release\split.language-id.pri" />
+    <None Include="CGPA\obj\Release\split.language-ig-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-is.pri" />
+    <None Include="CGPA\obj\Release\split.language-it.pri" />
+    <None Include="CGPA\obj\Release\split.language-ja.pri" />
+    <None Include="CGPA\obj\Release\split.language-ka.pri" />
+    <None Include="CGPA\obj\Release\split.language-kk.pri" />
+    <None Include="CGPA\obj\Release\split.language-km.pri" />
+    <None Include="CGPA\obj\Release\split.language-kn.pri" />
+    <None Include="CGPA\obj\Release\split.language-ko.pri" />
+    <None Include="CGPA\obj\Release\split.language-kok.pri" />
+    <None Include="CGPA\obj\Release\split.language-ku-arab.pri" />
+    <None Include="CGPA\obj\Release\split.language-ky-cyrl.pri" />
+    <None Include="CGPA\obj\Release\split.language-lb.pri" />
+    <None Include="CGPA\obj\Release\split.language-lt.pri" />
+    <None Include="CGPA\obj\Release\split.language-lv.pri" />
+    <None Include="CGPA\obj\Release\split.language-mi-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-mk.pri" />
+    <None Include="CGPA\obj\Release\split.language-ml.pri" />
+    <None Include="CGPA\obj\Release\split.language-mn-cyrl.pri" />
+    <None Include="CGPA\obj\Release\split.language-mr.pri" />
+    <None Include="CGPA\obj\Release\split.language-ms.pri" />
+    <None Include="CGPA\obj\Release\split.language-mt.pri" />
+    <None Include="CGPA\obj\Release\split.language-nb.pri" />
+    <None Include="CGPA\obj\Release\split.language-ne.pri" />
+    <None Include="CGPA\obj\Release\split.language-nl.pri" />
+    <None Include="CGPA\obj\Release\split.language-nn.pri" />
+    <None Include="CGPA\obj\Release\split.language-nso.pri" />
+    <None Include="CGPA\obj\Release\split.language-or.pri" />
+    <None Include="CGPA\obj\Release\split.language-pa-arab.pri" />
+    <None Include="CGPA\obj\Release\split.language-pa.pri" />
+    <None Include="CGPA\obj\Release\split.language-pl.pri" />
+    <None Include="CGPA\obj\Release\split.language-prs-arab.pri" />
+    <None Include="CGPA\obj\Release\split.language-pt.pri" />
+    <None Include="CGPA\obj\Release\split.language-quc-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-quz-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-ro.pri" />
+    <None Include="CGPA\obj\Release\split.language-ru.pri" />
+    <None Include="CGPA\obj\Release\split.language-rw.pri" />
+    <None Include="CGPA\obj\Release\split.language-sd-arab.pri" />
+    <None Include="CGPA\obj\Release\split.language-si.pri" />
+    <None Include="CGPA\obj\Release\split.language-sk.pri" />
+    <None Include="CGPA\obj\Release\split.language-sl.pri" />
+    <None Include="CGPA\obj\Release\split.language-sq.pri" />
+    <None Include="CGPA\obj\Release\split.language-sr-cyrl.pri" />
+    <None Include="CGPA\obj\Release\split.language-sr-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-sv.pri" />
+    <None Include="CGPA\obj\Release\split.language-sw.pri" />
+    <None Include="CGPA\obj\Release\split.language-ta.pri" />
+    <None Include="CGPA\obj\Release\split.language-te.pri" />
+    <None Include="CGPA\obj\Release\split.language-tg-cyrl.pri" />
+    <None Include="CGPA\obj\Release\split.language-th.pri" />
+    <None Include="CGPA\obj\Release\split.language-ti.pri" />
+    <None Include="CGPA\obj\Release\split.language-tk-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-tn.pri" />
+    <None Include="CGPA\obj\Release\split.language-tr.pri" />
+    <None Include="CGPA\obj\Release\split.language-tt-cyrl.pri" />
+    <None Include="CGPA\obj\Release\split.language-ug-arab.pri" />
+    <None Include="CGPA\obj\Release\split.language-uk.pri" />
+    <None Include="CGPA\obj\Release\split.language-ur.pri" />
+    <None Include="CGPA\obj\Release\split.language-uz-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-vi.pri" />
+    <None Include="CGPA\obj\Release\split.language-wo-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-xh.pri" />
+    <None Include="CGPA\obj\Release\split.language-yo-latn.pri" />
+    <None Include="CGPA\obj\Release\split.language-zh-hans.pri" />
+    <None Include="CGPA\obj\Release\split.language-zh-hant.pri" />
+    <None Include="CGPA\obj\Release\split.language-zu.pri" />
+    <None Include="CGPA\obj\Release\split.pri" />
+    <None Include="CGPA\obj\Release\split.priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\Release\split.qualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\Release\split.scale-140.pri" />
+    <None Include="CGPA\obj\Release\split.scale-180.pri" />
+    <None Include="CGPA\obj\x64\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="CGPA\obj\x64\Release\about.xbf" />
+    <None Include="CGPA\obj\x64\Release\App.xbf" />
+    <None Include="CGPA\obj\x64\Release\AppbarContent.xbf" />
+    <None Include="CGPA\obj\x64\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\obj\x64\Release\Ctext.xbf" />
+    <None Include="CGPA\obj\x64\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="CGPA\obj\x64\Release\gpa.xbf" />
+    <None Include="CGPA\obj\x64\Release\Know.xbf" />
+    <None Include="CGPA\obj\x64\Release\layout.resfiles" />
+    <None Include="CGPA\obj\x64\Release\layout.resfiles.intermediate" />
+    <None Include="CGPA\obj\x64\Release\MainPage.xbf" />
+    <None Include="CGPA\obj\x64\Release\personald.xbf" />
+    <None Include="CGPA\obj\x64\Release\pri.resfiles" />
+    <None Include="CGPA\obj\x64\Release\pri.resfiles.intermediate" />
+    <None Include="CGPA\obj\x64\Release\priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\x64\Release\profile.xbf" />
+    <None Include="CGPA\obj\x64\Release\qualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\x64\Release\resources.resfiles" />
+    <None Include="CGPA\obj\x64\Release\resources.resfiles.intermediate" />
+    <None Include="CGPA\obj\x64\Release\scale.xbf" />
+    <None Include="CGPA\obj\x64\Release\sgpa.xbf" />
+    <None Include="CGPA\obj\x86\Release\about.xbf" />
+    <None Include="CGPA\obj\x86\Release\App.xbf" />
+    <None Include="CGPA\obj\x86\Release\AppbarContent.xbf" />
+    <None Include="CGPA\obj\x86\Release\Common\StandardStyles.xbf" />
+    <None Include="CGPA\obj\x86\Release\Ctext.xbf" />
+    <None Include="CGPA\obj\x86\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="CGPA\obj\x86\Release\gpa.xbf" />
+    <None Include="CGPA\obj\x86\Release\Know.xbf" />
+    <None Include="CGPA\obj\x86\Release\layout.resfiles" />
+    <None Include="CGPA\obj\x86\Release\layout.resfiles.intermediate" />
+    <None Include="CGPA\obj\x86\Release\MainPage.xbf" />
+    <None Include="CGPA\obj\x86\Release\personald.xbf" />
+    <None Include="CGPA\obj\x86\Release\pri.resfiles" />
+    <None Include="CGPA\obj\x86\Release\pri.resfiles.intermediate" />
+    <None Include="CGPA\obj\x86\Release\priconfig.xml.intermediate" />
+    <None Include="CGPA\obj\x86\Release\profile.xbf" />
+    <None Include="CGPA\obj\x86\Release\qualifiers.txt.intermediate" />
+    <None Include="CGPA\obj\x86\Release\resources.resfiles" />
+    <None Include="CGPA\obj\x86\Release\resources.resfiles.intermediate" />
+    <None Include="CGPA\obj\x86\Release\scale.xbf" />
+    <None Include="CGPA\obj\x86\Release\sgpa.xbf" />
+    <None Include="CGPA\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CGPA\packages.config" />
+    <None Include="packages\AdDuplexWindows.8.0.3.0\AdDuplexWindows.8.0.3.0.nupkg" />
+    <None Include="packages\AdDuplexWindows.8.0.3.0\AdDuplexWindows.8.0.3.0.nuspec" />
+    <None Include="packages\AdDuplexWindows.8.0.3.0\lib\winrt45\AdDuplex.Windows.pri" />
+    <None Include="packages\Facebook.6.4.2\Facebook.6.4.2.nupkg" />
+    <None Include="packages\Facebook.6.4.2\Facebook.6.4.2.nuspec" />
+    <None Include="packages\Facebook.Client.0.8.0-alpha\Facebook.Client.0.8.0-alpha.nupkg" />
+    <None Include="packages\Facebook.Client.0.8.0-alpha\Facebook.Client.0.8.0-alpha.nuspec" />
+    <None Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client.pri" />
+    <None Include="packages\repositories.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".nuget\NuGet.exe" />
+    <Content Include="Backup\CGPA\CGPA.csproj" />
+    <Content Include="CGPA\Assets\bestwindows8apps-300x205.png" />
+    <Content Include="CGPA\Assets\bits-logo.jpg" />
+    <Content Include="CGPA\Assets\Logo.scale-100.png" />
+    <Content Include="CGPA\Assets\Logo.scale-140.png" />
+    <Content Include="CGPA\Assets\Logo.scale-180.png" />
+    <Content Include="CGPA\Assets\Logo.scale-80.png" />
+    <Content Include="CGPA\Assets\main - Copy.png" />
+    <Content Include="CGPA\Assets\main.png" />
+    <Content Include="CGPA\Assets\maina - Copy.png" />
+    <Content Include="CGPA\Assets\maina.png" />
+    <Content Include="CGPA\Assets\mainc.png" />
+    <Content Include="CGPA\Assets\maing.png" />
+    <Content Include="CGPA\Assets\mainp.png" />
+    <Content Include="CGPA\Assets\promo1.png" />
+    <Content Include="CGPA\Assets\promo2.png" />
+    <Content Include="CGPA\Assets\SmallLogo.scale-100.png" />
+    <Content Include="CGPA\Assets\SmallLogo.scale-140.png" />
+    <Content Include="CGPA\Assets\SmallLogo.scale-180.png" />
+    <Content Include="CGPA\Assets\SmallLogo.scale-80.png" />
+    <Content Include="CGPA\Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="CGPA\Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="CGPA\Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="CGPA\Assets\SmallLogo.targetsize-48.png" />
+    <Content Include="CGPA\Assets\splash.jpg" />
+    <Content Include="CGPA\Assets\SplashScreen.scale-100.jpg" />
+    <Content Include="CGPA\Assets\SplashScreen.scale-140.jpg" />
+    <Content Include="CGPA\Assets\SplashScreen.scale-180.jpg" />
+    <Content Include="CGPA\Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="CGPA\Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="CGPA\Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="CGPA\Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="CGPA\Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="CGPA\Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="CGPA\Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="CGPA\Assets\Square70x70Logo.scale-80.png" />
+    <Content Include="CGPA\Assets\StoreLogo.scale-100.png" />
+    <Content Include="CGPA\Assets\StoreLogo.scale-140.png" />
+    <Content Include="CGPA\Assets\StoreLogo.scale-180.png" />
+    <Content Include="CGPA\Assets\WideLogo.scale-100 - Copy.png" />
+    <Content Include="CGPA\Assets\WideLogo.scale-100.png" />
+    <Content Include="CGPA\Assets\WideLogo.scale-140.png" />
+    <Content Include="CGPA\Assets\WideLogo.scale-180.png" />
+    <Content Include="CGPA\Assets\WideLogo.scale-80.png" />
+    <Content Include="CGPA\bin\ARM\Release\AppxManifest.xml" />
+    <Content Include="CGPA\bin\ARM\Release\CGPA.exe" />
+    <Content Include="CGPA\bin\ARM\Release\CGPA.pdb" />
+    <Content Include="CGPA\bin\ARM\Release\Microsoft.Advertising.WinRT.UI.xml" />
+    <Content Include="CGPA\bin\ARM\Release\MicrosoftAdvertising.xml" />
+    <Content Include="CGPA\bin\Debug\AppxManifest.xml" />
+    <Content Include="CGPA\bin\Debug\AppX\AppxManifest.xml" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\bestwindows8apps-300x205.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\bits-logo.jpg" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\Logo.scale-100.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\Logo.scale-140.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\Logo.scale-180.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\Logo.scale-80.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\main - Copy.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\main.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\maina.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\mainc.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\maing.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\mainp.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.scale-100.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.scale-140.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.scale-180.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.scale-80.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SmallLogo.targetsize-48.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\splash.jpg" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SplashScreen.scale-100.jpg" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SplashScreen.scale-140.jpg" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\SplashScreen.scale-180.jpg" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\StoreLogo.scale-100.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\StoreLogo.scale-140.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\StoreLogo.scale-180.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\WideLogo.scale-100 - Copy.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\WideLogo.scale-100.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\WideLogo.scale-140.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\WideLogo.scale-180.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Assets\WideLogo.scale-80.png" />
+    <Content Include="CGPA\bin\Debug\AppX\CGPA.exe" />
+    <Content Include="CGPA\bin\Debug\AppX\Common\ReadMe.txt" />
+    <Content Include="CGPA\bin\Debug\AppX\Facebook.Client.dll" />
+    <Content Include="CGPA\bin\Debug\AppX\Facebook.Client\Images\fb_blank_place_profile_square.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Facebook.Client\Images\fb_blank_profile_portrait.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Facebook.Client\Images\fb_blank_profile_square.png" />
+    <Content Include="CGPA\bin\Debug\AppX\Facebook.dll" />
+    <Content Include="CGPA\bin\Debug\AppX\Microsoft.Advertising.WinRT.UI\bootstrap.html" />
+    <Content Include="CGPA\bin\Debug\AppX\Microsoft.Advertising.WinRT.UI\ormma.js" />
+    <Content Include="CGPA\bin\Debug\AppX\Microsoft.Live.dll" />
+    <Content Include="CGPA\bin\Debug\CGPA.exe" />
+    <Content Include="CGPA\bin\Debug\CGPA.pdb" />
+    <Content Include="CGPA\bin\Debug\Facebook.Client.dll" />
+    <Content Include="CGPA\bin\Debug\Facebook.Client.xml" />
+    <Content Include="CGPA\bin\Debug\Facebook.dll" />
+    <Content Include="CGPA\bin\Debug\Facebook.xml" />
+    <Content Include="CGPA\bin\Debug\Microsoft.Advertising.WinRT.UI.xml" />
+    <Content Include="CGPA\bin\Debug\Microsoft.Live.dll" />
+    <Content Include="CGPA\bin\Debug\MicrosoftAdvertising.xml" />
+    <Content Include="CGPA\bin\Debug\ValidationResult.xml" />
+    <Content Include="CGPA\bin\Release\AppxManifest.xml" />
+    <Content Include="CGPA\bin\Release\AppX\AppxManifest.xml" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\bestwindows8apps-300x205.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\bits-logo.jpg" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\Logo.scale-100.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\Logo.scale-140.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\Logo.scale-180.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\Logo.scale-80.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\main - Copy.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\main.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\maina.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\mainc.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\maing.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\mainp.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.scale-100.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.scale-140.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.scale-180.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.scale-80.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SmallLogo.targetsize-48.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\splash.jpg" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SplashScreen.scale-100.jpg" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SplashScreen.scale-140.jpg" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\SplashScreen.scale-180.jpg" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\StoreLogo.scale-100.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\StoreLogo.scale-140.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\StoreLogo.scale-180.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\WideLogo.scale-100 - Copy.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\WideLogo.scale-100.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\WideLogo.scale-140.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\WideLogo.scale-180.png" />
+    <Content Include="CGPA\bin\Release\AppX\Assets\WideLogo.scale-80.png" />
+    <Content Include="CGPA\bin\Release\AppX\CGPA.exe" />
+    <Content Include="CGPA\bin\Release\AppX\Common\ReadMe.txt" />
+    <Content Include="CGPA\bin\Release\AppX\Facebook.Client.dll" />
+    <Content Include="CGPA\bin\Release\AppX\Facebook.Client\Images\fb_blank_place_profile_square.png" />
+    <Content Include="CGPA\bin\Release\AppX\Facebook.Client\Images\fb_blank_profile_portrait.png" />
+    <Content Include="CGPA\bin\Release\AppX\Facebook.Client\Images\fb_blank_profile_square.png" />
+    <Content Include="CGPA\bin\Release\AppX\Facebook.dll" />
+    <Content Include="CGPA\bin\Release\AppX\Microsoft.Advertising.WinRT.UI\bootstrap.html" />
+    <Content Include="CGPA\bin\Release\AppX\Microsoft.Advertising.WinRT.UI\ormma.js" />
+    <Content Include="CGPA\bin\Release\AppX\Microsoft.Live.dll" />
+    <Content Include="CGPA\bin\Release\CGPA.exe" />
+    <Content Include="CGPA\bin\Release\CGPA.exe.CodeAnalysisLog.xml" />
+    <Content Include="CGPA\bin\Release\CGPA.pdb" />
+    <Content Include="CGPA\bin\Release\CGPA.xr.xml" />
+    <Content Include="CGPA\bin\Release\Facebook.Client.dll" />
+    <Content Include="CGPA\bin\Release\Facebook.Client.xml" />
+    <Content Include="CGPA\bin\Release\Facebook.dll" />
+    <Content Include="CGPA\bin\Release\Facebook.xml" />
+    <Content Include="CGPA\bin\Release\ForBundle\AppxManifest.xml" />
+    <Content Include="CGPA\bin\Release\Microsoft.Advertising.WinRT.UI.xml" />
+    <Content Include="CGPA\bin\Release\Microsoft.Live.dll" />
+    <Content Include="CGPA\bin\Release\MicrosoftAdvertising.xml" />
+    <Content Include="CGPA\bin\x64\Release\AppxManifest.xml" />
+    <Content Include="CGPA\bin\x64\Release\CGPA.exe" />
+    <Content Include="CGPA\bin\x64\Release\CGPA.pdb" />
+    <Content Include="CGPA\bin\x64\Release\Microsoft.Advertising.WinRT.UI.xml" />
+    <Content Include="CGPA\bin\x64\Release\MicrosoftAdvertising.xml" />
+    <Content Include="CGPA\bin\x86\Release\AppxManifest.xml" />
+    <Content Include="CGPA\bin\x86\Release\CGPA.exe" />
+    <Content Include="CGPA\bin\x86\Release\CGPA.pdb" />
+    <Content Include="CGPA\bin\x86\Release\Microsoft.Advertising.WinRT.UI.xml" />
+    <Content Include="CGPA\bin\x86\Release\MicrosoftAdvertising.xml" />
+    <Content Include="CGPA\BundleArtifacts\neutral.txt" />
+    <Content Include="CGPA\CGPA.csproj" />
+    <Content Include="CGPA\CGPA.csproj.user" />
+    <Content Include="CGPA\Common\ReadMe.txt" />
+    <Content Include="CGPA\obj\ARM\Release\CGPA.csproj.FileListAbsolute.txt" />
+    <Content Include="CGPA\obj\ARM\Release\CGPA.exe" />
+    <Content Include="CGPA\obj\ARM\Release\CGPA.pdb" />
+    <Content Include="CGPA\obj\ARM\Release\intermediatexaml\CGPA.exe" />
+    <Content Include="CGPA\obj\ARM\Release\intermediatexaml\CGPA.pdb" />
+    <Content Include="CGPA\obj\ARM\Release\MultipleQualifiersPerDimensionFound.txt" />
+    <Content Include="CGPA\obj\ARM\Release\priconfig.xml" />
+    <Content Include="CGPA\obj\ARM\Release\ProjectArchitectures.txt" />
+    <Content Include="CGPA\obj\ARM\Release\qualifiers.txt" />
+    <Content Include="CGPA\obj\ARM\Release\Stripped\CGPA.pdb" />
+    <Content Include="CGPA\obj\ARM\Release\XamlSaveStateFile.xml" />
+    <Content Include="CGPA\obj\ARM\Release\_pkginfo.txt" />
+    <Content Include="CGPA\obj\Debug\CGPA.csproj.FileListAbsolute.txt" />
+    <Content Include="CGPA\obj\Debug\CGPA.exe" />
+    <Content Include="CGPA\obj\Debug\CGPA.pdb" />
+    <Content Include="CGPA\obj\Debug\Facebook.Client.pri.xml" />
+    <Content Include="CGPA\obj\Debug\intermediatexaml\CGPA.exe" />
+    <Content Include="CGPA\obj\Debug\intermediatexaml\CGPA.pdb" />
+    <Content Include="CGPA\obj\Debug\LanguageQualifiers.txt" />
+    <Content Include="CGPA\obj\Debug\MultipleQualifiersPerDimensionFound.txt" />
+    <Content Include="CGPA\obj\Debug\priconfig.xml" />
+    <Content Include="CGPA\obj\Debug\ProjectArchitectures.txt" />
+    <Content Include="CGPA\obj\Debug\qualifiers.txt" />
+    <Content Include="CGPA\obj\Debug\XamlSaveStateFile.xml" />
+    <Content Include="CGPA\obj\Release\CGPA.csproj.FileListAbsolute.txt" />
+    <Content Include="CGPA\obj\Release\CGPA.exe" />
+    <Content Include="CGPA\obj\Release\CGPA.pdb" />
+    <Content Include="CGPA\obj\Release\CGPA.xr.xml" />
+    <Content Include="CGPA\obj\Release\Facebook.Client.pri.xml" />
+    <Content Include="CGPA\obj\Release\filemap.generatedFiles.txt" />
+    <Content Include="CGPA\obj\Release\filemap.map.txt" />
+    <Content Include="CGPA\obj\Release\filemap.priconfig.xml" />
+    <Content Include="CGPA\obj\Release\filemap.scale-140.map.txt" />
+    <Content Include="CGPA\obj\Release\filemap.scale-180.map.txt" />
+    <Content Include="CGPA\obj\Release\intermediatexaml\CGPA.exe" />
+    <Content Include="CGPA\obj\Release\intermediatexaml\CGPA.pdb" />
+    <Content Include="CGPA\obj\Release\LanguageQualifiers.txt" />
+    <Content Include="CGPA\obj\Release\main.map.txt" />
+    <Content Include="CGPA\obj\Release\MultipleQualifiersPerDimensionFound.txt" />
+    <Content Include="CGPA\obj\Release\package.map.txt" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\bestwindows8apps-300x205.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\bits-logo.jpg" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\Logo.scale-100.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\Logo.scale-140.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\Logo.scale-180.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\Logo.scale-80.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\main - Copy.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\main.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\maina.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\mainc.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\maing.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\mainp.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.scale-100.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.scale-140.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.scale-180.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.scale-80.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.targetsize-16.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.targetsize-256.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.targetsize-32.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SmallLogo.targetsize-48.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\splash.jpg" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SplashScreen.scale-100.jpg" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SplashScreen.scale-140.jpg" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\SplashScreen.scale-180.jpg" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\StoreLogo.scale-100.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\StoreLogo.scale-140.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\StoreLogo.scale-180.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\WideLogo.scale-100 - Copy.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\WideLogo.scale-100.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\WideLogo.scale-140.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\WideLogo.scale-180.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Assets\WideLogo.scale-80.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\CGPA.exe" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Common\ReadMe.txt" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Facebook.Client.dll" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Images\fb_blank_place_profile_square.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Images\fb_blank_profile_portrait.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Images\fb_blank_profile_square.png" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Facebook.dll" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Microsoft.Advertising.WinRT.UI\bootstrap.html" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Microsoft.Advertising.WinRT.UI\ormma.js" />
+    <Content Include="CGPA\obj\Release\PackageLayout\Microsoft.Live.dll" />
+    <Content Include="CGPA\obj\Release\priconfig.xml" />
+    <Content Include="CGPA\obj\Release\ProjectArchitectures.txt" />
+    <Content Include="CGPA\obj\Release\qualifiers.txt" />
+    <Content Include="CGPA\obj\Release\split.generatedFiles.txt" />
+    <Content Include="CGPA\obj\Release\split.language-af.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-am.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ar.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-as.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-az-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-be.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-bg.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-bn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-bs.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ca.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-cs.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-cy.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-da.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-de.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-el.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-es.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-et.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-eu.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-fa.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-fi.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-fil-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-fr.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ga.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-gd-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-gl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-gu.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ha-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-he.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-hi.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-hr.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-hu.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-hy.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-id.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ig-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-is.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-it.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ja.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ka.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-kk.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-km.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-kn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ko.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-kok.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ku-arab.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ky-cyrl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-lb.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-lt.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-lv.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-mi-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-mk.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ml.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-mn-cyrl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-mr.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ms.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-mt.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-nb.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ne.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-nl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-nn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-nso.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-or.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-pa-arab.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-pa.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-pl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-prs-arab.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-pt.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-quc-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-quz-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ro.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ru.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-rw.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sd-arab.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-si.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sk.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sq.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sr-cyrl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sr-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sv.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-sw.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ta.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-te.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-tg-cyrl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-th.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ti.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-tk-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-tn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-tr.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-tt-cyrl.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ug-arab.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-uk.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-ur.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-uz-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-vi.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-wo-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-xh.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-yo-latn.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-zh-hans.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-zh-hant.map.txt" />
+    <Content Include="CGPA\obj\Release\split.language-zu.map.txt" />
+    <Content Include="CGPA\obj\Release\split.map.txt" />
+    <Content Include="CGPA\obj\Release\split.priconfig.xml" />
+    <Content Include="CGPA\obj\Release\split.qualifiers.txt" />
+    <Content Include="CGPA\obj\Release\split.scale-140.map.txt" />
+    <Content Include="CGPA\obj\Release\split.scale-180.map.txt" />
+    <Content Include="CGPA\obj\Release\Stripped\CGPA.pdb" />
+    <Content Include="CGPA\obj\Release\XamlSaveStateFile.xml" />
+    <Content Include="CGPA\obj\Release\_pkginfo.txt" />
+    <Content Include="CGPA\obj\x64\Release\CGPA.csproj.FileListAbsolute.txt" />
+    <Content Include="CGPA\obj\x64\Release\CGPA.exe" />
+    <Content Include="CGPA\obj\x64\Release\CGPA.pdb" />
+    <Content Include="CGPA\obj\x64\Release\intermediatexaml\CGPA.exe" />
+    <Content Include="CGPA\obj\x64\Release\intermediatexaml\CGPA.pdb" />
+    <Content Include="CGPA\obj\x64\Release\MultipleQualifiersPerDimensionFound.txt" />
+    <Content Include="CGPA\obj\x64\Release\priconfig.xml" />
+    <Content Include="CGPA\obj\x64\Release\ProjectArchitectures.txt" />
+    <Content Include="CGPA\obj\x64\Release\qualifiers.txt" />
+    <Content Include="CGPA\obj\x64\Release\Stripped\CGPA.pdb" />
+    <Content Include="CGPA\obj\x64\Release\XamlSaveStateFile.xml" />
+    <Content Include="CGPA\obj\x64\Release\_pkginfo.txt" />
+    <Content Include="CGPA\obj\x86\Release\CGPA.csproj.FileListAbsolute.txt" />
+    <Content Include="CGPA\obj\x86\Release\CGPA.exe" />
+    <Content Include="CGPA\obj\x86\Release\CGPA.pdb" />
+    <Content Include="CGPA\obj\x86\Release\intermediatexaml\CGPA.exe" />
+    <Content Include="CGPA\obj\x86\Release\intermediatexaml\CGPA.pdb" />
+    <Content Include="CGPA\obj\x86\Release\MultipleQualifiersPerDimensionFound.txt" />
+    <Content Include="CGPA\obj\x86\Release\priconfig.xml" />
+    <Content Include="CGPA\obj\x86\Release\ProjectArchitectures.txt" />
+    <Content Include="CGPA\obj\x86\Release\qualifiers.txt" />
+    <Content Include="CGPA\obj\x86\Release\Stripped\CGPA.pdb" />
+    <Content Include="CGPA\obj\x86\Release\XamlSaveStateFile.xml" />
+    <Content Include="CGPA\obj\x86\Release\_pkginfo.txt" />
+    <Content Include="CGPA\Package.StoreAssociation.xml" />
+    <Content Include="packages\AdDuplexWindows.8.0.3.0\lib\winrt45\AdDuplex.Windows.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\net35-client\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\net35-client\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\lib\net40-client\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\net40-client\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\lib\net45\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\net45\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\lib\sl5\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\sl5\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\lib\win8\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\win8\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\lib\wp71\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\wp71\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\lib\wp8\Facebook.dll" />
+    <Content Include="packages\Facebook.6.4.2\lib\wp8\Facebook.xml" />
+    <Content Include="packages\Facebook.6.4.2\LICENSE.txt" />
+    <Content Include="packages\Facebook.6.4.2\readme.txt" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client.dll" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client.xml" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Images\fb_blank_place_profile_square.png" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Images\fb_blank_profile_portrait.png" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Images\fb_blank_profile_square.png" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\wp71\Facebook.Client.dll" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\wp71\Facebook.Client.xml" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\wp8\Facebook.Client.dll" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\lib\wp8\Facebook.Client.xml" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\LICENSE.txt" />
+    <Content Include="packages\Facebook.Client.0.8.0-alpha\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CGPA\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\AccFly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\aauthor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\acgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\afeat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\afunc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\ahome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppX\Facebook.Client\Controls\FriendPicker\FriendPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppX\Facebook.Client\Controls\LoginButton\LoginButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppX\Facebook.Client\Controls\PlacePicker\PlacePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppX\Facebook.Client\Controls\ProfilePicture\ProfilePicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppX\Facebook.Client\FacebookDialogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\AppX\Facebook.Client\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\aprivacy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\BasicPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\privacy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Debug\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppX\Facebook.Client\Controls\FriendPicker\FriendPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppX\Facebook.Client\Controls\LoginButton\LoginButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppX\Facebook.Client\Controls\PlacePicker\PlacePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppX\Facebook.Client\Controls\ProfilePicture\ProfilePicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppX\Facebook.Client\FacebookDialogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\AppX\Facebook.Client\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\privacy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\bin\Release\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\fly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\ARM\Release\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\AccFly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\fly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Debug\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\AccFly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\fly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Controls\FriendPicker\FriendPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Controls\LoginButton\LoginButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Controls\PlacePicker\PlacePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Controls\ProfilePicture\ProfilePicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\PackageLayout\Facebook.Client\FacebookDialogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\PackageLayout\Facebook.Client\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\Release\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x64\Release\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\about.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\AppbarContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\Ctext.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\gpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\Know.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\obj\x86\Release\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\personald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\privacy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CGPA\sgpa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\AdDuplexWindows.8.0.3.0\lib\winrt45\AdDuplex.Windows\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Controls\FriendPicker\FriendPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Controls\LoginButton\LoginButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Controls\PlacePicker\PlacePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Controls\ProfilePicture\ProfilePicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\FacebookDialogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="packages\Facebook.Client.0.8.0-alpha\lib\win8\Facebook.Client\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CGPA\about.xaml.cs">
+      <DependentUpon>about.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\AccFly.xaml.cs">
+      <DependentUpon>AccFly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\AppbarContent.xaml.cs">
+      <DependentUpon>AppbarContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\Common\BindableBase.cs" />
+    <Compile Include="CGPA\Common\BooleanNegationConverter.cs" />
+    <Compile Include="CGPA\Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="CGPA\Common\LayoutAwarePage.cs" />
+    <Compile Include="CGPA\Common\RichTextColumns.cs" />
+    <Compile Include="CGPA\Common\SuspensionManager.cs" />
+    <Compile Include="CGPA\Ctext.xaml.cs">
+      <DependentUpon>Ctext.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\fly.xaml.cs">
+      <DependentUpon>fly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\gpa.xaml.cs">
+      <DependentUpon>gpa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\Know.xaml.cs">
+      <DependentUpon>Know.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\login.xaml.cs">
+      <DependentUpon>login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\obj\ARM\Release\about.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\about.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\App.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\App.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\AppbarContent.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\AppbarContent.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\Common\StandardStyles.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\Common\StandardStyles.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\Ctext.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\Ctext.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\gpa.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\gpa.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\Know.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\Know.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\MainPage.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\MainPage.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\personald.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\personald.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\profile.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\profile.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\scale.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\scale.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\sgpa.g.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\sgpa.g.i.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CGPA\obj\ARM\Release\XamlTypeInfo.g.cs" />
+    <Compile Include="CGPA\obj\Debug\about.g.cs" />
+    <Compile Include="CGPA\obj\Debug\about.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\AccFly.g.cs" />
+    <Compile Include="CGPA\obj\Debug\AccFly.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\App.g.cs" />
+    <Compile Include="CGPA\obj\Debug\App.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\AppbarContent.g.cs" />
+    <Compile Include="CGPA\obj\Debug\AppbarContent.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\Common\StandardStyles.g.cs" />
+    <Compile Include="CGPA\obj\Debug\Common\StandardStyles.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\Ctext.g.cs" />
+    <Compile Include="CGPA\obj\Debug\Ctext.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\fly.g.cs" />
+    <Compile Include="CGPA\obj\Debug\fly.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\gpa.g.cs" />
+    <Compile Include="CGPA\obj\Debug\gpa.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\Know.g.cs" />
+    <Compile Include="CGPA\obj\Debug\Know.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\login.g.cs" />
+    <Compile Include="CGPA\obj\Debug\login.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\MainPage.g.cs" />
+    <Compile Include="CGPA\obj\Debug\MainPage.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\personald.g.cs" />
+    <Compile Include="CGPA\obj\Debug\personald.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\profile.g.cs" />
+    <Compile Include="CGPA\obj\Debug\profile.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\scale.g.cs" />
+    <Compile Include="CGPA\obj\Debug\scale.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\sgpa.g.cs" />
+    <Compile Include="CGPA\obj\Debug\sgpa.g.i.cs" />
+    <Compile Include="CGPA\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CGPA\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CGPA\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CGPA\obj\Debug\XamlTypeInfo.g.cs" />
+    <Compile Include="CGPA\obj\Release\about.g.cs" />
+    <Compile Include="CGPA\obj\Release\about.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\AccFly.g.cs" />
+    <Compile Include="CGPA\obj\Release\AccFly.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\App.g.cs" />
+    <Compile Include="CGPA\obj\Release\App.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\AppbarContent.g.cs" />
+    <Compile Include="CGPA\obj\Release\AppbarContent.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\Common\StandardStyles.g.cs" />
+    <Compile Include="CGPA\obj\Release\Common\StandardStyles.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\Ctext.g.cs" />
+    <Compile Include="CGPA\obj\Release\Ctext.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\fly.g.cs" />
+    <Compile Include="CGPA\obj\Release\fly.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\gpa.g.cs" />
+    <Compile Include="CGPA\obj\Release\gpa.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\Know.g.cs" />
+    <Compile Include="CGPA\obj\Release\Know.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\login.g.cs" />
+    <Compile Include="CGPA\obj\Release\login.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\MainPage.g.cs" />
+    <Compile Include="CGPA\obj\Release\MainPage.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\personald.g.cs" />
+    <Compile Include="CGPA\obj\Release\personald.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\profile.g.cs" />
+    <Compile Include="CGPA\obj\Release\profile.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\scale.g.cs" />
+    <Compile Include="CGPA\obj\Release\scale.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\sgpa.g.cs" />
+    <Compile Include="CGPA\obj\Release\sgpa.g.i.cs" />
+    <Compile Include="CGPA\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CGPA\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CGPA\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CGPA\obj\Release\XamlTypeInfo.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\about.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\about.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\App.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\App.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\AppbarContent.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\AppbarContent.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\Common\StandardStyles.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\Common\StandardStyles.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\Ctext.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\Ctext.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\gpa.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\gpa.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\Know.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\Know.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\MainPage.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\MainPage.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\personald.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\personald.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\privacy.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\privacy.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\profile.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\profile.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\scale.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\scale.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\sgpa.g.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\sgpa.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CGPA\obj\x64\Debug\XamlTypeInfo.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\about.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\about.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\App.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\App.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\AppbarContent.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\AppbarContent.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\Common\StandardStyles.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\Common\StandardStyles.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\Ctext.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\Ctext.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\gpa.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\gpa.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\Know.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\Know.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\MainPage.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\MainPage.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\personald.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\personald.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\profile.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\profile.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\scale.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\scale.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\sgpa.g.cs" />
+    <Compile Include="CGPA\obj\x64\Release\sgpa.g.i.cs" />
+    <Compile Include="CGPA\obj\x64\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CGPA\obj\x64\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CGPA\obj\x64\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CGPA\obj\x64\Release\XamlTypeInfo.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\about.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\about.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\App.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\App.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\AppbarContent.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\AppbarContent.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\Common\StandardStyles.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\Common\StandardStyles.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\Ctext.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\Ctext.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\gpa.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\gpa.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\Know.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\Know.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\MainPage.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\MainPage.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\personald.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\personald.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\profile.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\profile.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\scale.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\scale.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\sgpa.g.cs" />
+    <Compile Include="CGPA\obj\x86\Release\sgpa.g.i.cs" />
+    <Compile Include="CGPA\obj\x86\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="CGPA\obj\x86\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="CGPA\obj\x86\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="CGPA\obj\x86\Release\XamlTypeInfo.g.cs" />
+    <Compile Include="CGPA\personald.xaml.cs">
+      <DependentUpon>personald.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\privacy.xaml.cs">
+      <DependentUpon>privacy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\profile.xaml.cs">
+      <DependentUpon>profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\Properties\AssemblyInfo.cs" />
+    <Compile Include="CGPA\scale.xaml.cs">
+      <DependentUpon>scale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CGPA\sgpa.xaml.cs">
+      <DependentUpon>sgpa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="packages\Facebook.6.4.2\serializers\JsonNetSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CGPA\bin\ARM\Debug\" />
+    <Folder Include="CGPA\bin\x64\Debug\" />
+    <Folder Include="CGPA\bin\x86\Debug\" />
+    <Folder Include="CGPA\obj\ARM\Release\TempPE\" />
+    <Folder Include="CGPA\obj\Debug\TempPE\" />
+    <Folder Include="CGPA\obj\Release\TempPE\" />
+    <Folder Include="CGPA\obj\x64\Debug\intermediatexaml\" />
+    <Folder Include="CGPA\obj\x64\Debug\TempPE\" />
+    <Folder Include="CGPA\obj\x64\Release\TempPE\" />
+    <Folder Include="CGPA\obj\x86\Release\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

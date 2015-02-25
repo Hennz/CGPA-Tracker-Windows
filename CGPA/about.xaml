@@ -1,0 +1,317 @@
+﻿<common:LayoutAwarePage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CGPA"
+    xmlns:common="using:CGPA.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    x:Name="pageRoot"
+    x:Class="CGPA.about"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+    <Grid x:Name="Grid" Style="{StaticResource LayoutRootStyle}" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Image1" HorizontalAlignment="Left" Height="628" Margin="321,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1045" Stretch="Fill"/>
+
+        <Grid x:Name="side" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="321" Grid.RowSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Blue" Offset="2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <ListBox x:Name="Listbox" HorizontalAlignment="Left" Height="403" Margin="29,209,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="Listbox_SelectionChanged" SelectedIndex="0" RequestedTheme="Light">
+                <ListBoxItem Content="Home" FontSize="28" FontFamily="Comic Sans MS" IsSelected="True"/>
+                <ListBoxItem Content="What is CGPA?" FontSize="28" FontFamily="Comic Sans MS"/>
+                <ListBoxItem Content="Functionality of the APP" FontSize="21" FontFamily="Comic Sans MS"/>
+                <ListBoxItem Content="Features of the APP" FontSize="25" FontFamily="Comic Sans MS"/>
+                <ListBoxItem Content="Know about the Author" FontSize="22" FontFamily="Comic Sans MS"/>
+                <ListBoxItem Content="Privacy Policy" FontSize="28" FontFamily="Comic Sans MS"/>
+                <ListBoxItem Content="Educational Ads" FontSize="30" FontFamily="Comic Sans MS"/>
+            </ListBox>
+        </Grid>
+        <Popup x:Name="LightDismissAnimatedPopup" HorizontalOffset="10" VerticalOffset="10" IsLightDismissEnabled="True" Margin="321,213,193,212" Grid.Row="1">
+            <Popup.ChildTransitions>
+                <TransitionCollection>
+                    <PopupThemeTransition />
+                </TransitionCollection>
+            </Popup.ChildTransitions>
+            <Border BorderThickness="2" Width="831" Height="192">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Blue" Offset="2"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,-2,8,8" Width="811" Height="182">
+                    <TextBlock x:Name="errortext" Text="Simple Popup" FontSize="24.667" Height="125" Width="801" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <Button x:Name="close" Content="Close" Click="CloseAnimatedPopupClicked" HorizontalAlignment="Stretch" Background="#FF212121" Height="48" Margin="329,0,341,0" />
+                </StackPanel>
+            </Border>
+        </Popup>
+
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Blue" Offset="2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1366"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Margin="36,0,0,36"/>
+            <StackPanel HorizontalAlignment="Left" Height="130" Margin="111,10,0,0" VerticalAlignment="Top" Width="158">
+                <Image x:Name="welimg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+                <TextBlock x:Name="welcome" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello, " VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS" Height="30" Width="158"/>
+            </StackPanel>
+            <TextBlock x:Name="pageTitle" Text="About the App" Style="{StaticResource PageHeaderTextStyle}" Height="55" Margin="397,0,238,27" FontFamily="Comic Sans MS" FontSize="72">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Blue" Offset="1"/>
+                        <GradientStop Color="#FF62760A" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <ComboBox x:Name="Theme" Margin="1234,10,10,99" SelectionChanged="Theme_SelectionChanged" SelectedIndex="0">
+                <ComboBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF74FF00"/>
+                        <GradientStop Color="#CCFF0000" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.BorderBrush>
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="Black" Foreground="Black"/>
+                <ComboBoxItem Background="Black" Content="White" Foreground="White"/>
+                <ComboBoxItem Content="BING" FontWeight="Bold"/>
+                <ComboBoxItem Content="Browse" FontWeight="Bold" Tapped="ComboBoxItem_Tapped"/>
+                <ComboBoxItem Content="Green" Foreground="Green"/>
+                <ComboBoxItem Content="Blue" Foreground="Blue"/>
+                <ComboBoxItem Content="Red" Foreground="Red"/>
+                <ComboBoxItem Content="Pink" Foreground="Pink"/>
+                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
+                <ComboBoxItem Content="Brown" Foreground="Brown"/>
+                <ComboBoxItem Content="Orange" Foreground="Orange"/>
+                <ComboBoxItem Content="Purple" Foreground="Purple"/>
+                <ComboBoxItem Content="Silver" Foreground="Silver"/>
+                <ComboBoxItem Content="Gold" Foreground="Gold"/>
+                <ComboBoxItem Content="RANDOM" FontWeight="Bold"/>
+            </ComboBox>
+
+            <TextBlock x:Name="Themet" TextWrapping="Wrap" Text="Theme" FontFamily="Comic Sans MS" FontSize="22" Foreground="White" HorizontalAlignment="Left" Margin="1145,10,0,0"  VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="Grid1" HorizontalAlignment="Left" Height="560" Margin="356,33,0,0" Grid.Row="1" VerticalAlignment="Top" Width="980" Background="White" Opacity="0.8">
+            <TextBlock x:Name="Text1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="540" Width="960" FontFamily="Comic Sans MS" FontSize="40" Foreground="Black">
+            	<Run Foreground="Blue"/>
+            	<LineBreak/>
+            	<Run Foreground="Blue"/>
+            	<LineBreak/>
+            	<Run Foreground="Blue" Text="Name of the App: "/>
+            	<Run Text="&#x9;           "/>
+            	<Run Text="CGPA-Tracker"/>
+            	<LineBreak/>
+            	<Run Foreground="Blue" Text="Name of the Author/Publisher:"/>
+            	<Run Foreground="Blue" Text=" "/>
+            	<Run Text=""/>
+            	<Run Text="Srujan Jha"/>
+            	<LineBreak/>
+            	<Run Foreground="Blue" Text="Release Version"/>
+            	<Run Text=":"/>
+            	<Run Text="&#x9;&#x9;"/>
+            	<Run Text="3"/>
+            	<Run Text=".0.0.0."/>
+            	<Run Text="0"/>
+            	<LineBreak/>
+            	<Run Foreground="#FF000CFF" Text="Send a review at: &#x9;"/>
+            	<Run Text="srujanjha.jha@gmail.com"/>
+            	<LineBreak/>
+            	<Run Foreground="#FF000CFF" Text="Website: "/>
+            	<Run Text="http://srujanjha.wix.com/cgpa-tracker"/>
+            </TextBlock>
+            <TextBlock x:Name="Text4" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="540" Width="960" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" Visibility="Collapsed">
+				<Run Text="Here are the features of this app:"/>
+				<LineBreak/>
+				<Run Text="* This is a great app which calculates your GPA, SGPA, CGPA. It also has a scale conversion, which converts your GPA from one scale to another."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="* This maintains your Profile, Keeps track of your CGPA"/>
+				<Run Text=" at all time."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="* A very interesting feature has been added in this app which makes it "/>
+				<Run FontWeight="Bold" Text="different"/>
+				<Run Text=" from other similar apps. This app keeps the record of the GPA calculation you make and fills the required information "/>
+				<Run FontWeight="Bold" Text="automatically"/>
+				<Run Text=". Hence, this is a "/>
+				<Run FontWeight="Bold" Text="hassle-free "/>
+				<Run Text="solution if you calculate your GPA very frequently."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="* "/>
+				<Run FontWeight="Bold" Text="Themes"/>
+				<Run Text=", most of the time apps don't provide an option to change the theme of the app, which this app provides. You can not only change the theme of this app to "/>
+				<Run FontWeight="Bold" Text="12 different colors "/>
+				<Run Text="and at "/>
+				<Run FontWeight="Bold" Text="every page individually"/>
+				<Run Text=", but also this app "/>
+				<Run FontWeight="Bold" Text="saves"/>
+				<Run Text=" this information and "/>
+				<Run FontWeight="Bold" Text="loads"/>
+				<Run Text=" it in the way you want."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="* Why look at same colours every time ? Select "/>
+				<Run FontWeight="Bold" Text="Random"/>
+				<Run Text=" from themes and your theme changes every time you go to the particular page."/>
+				<LineBreak/>
+				<LineBreak/>
+				<Run Text="* Lastly, this shouldn't count as a feature, but I would like to mention about the App-LOGO on the Main Page, which is very different from other apps"/>
+				<Run Text=" and remember "/>
+				<Run FontWeight="Bold" Text="SUCCESS follows U"/>
+				<Run Text="."/>
+            </TextBlock>
+            <TextBlock x:Name="Text2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="540" Width="960" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" Visibility="Collapsed">
+				<Run Text="&#x9;"/>
+				<Run Text="Grading in education is the process of applying standardized measurements of varying levels of achievement in a course."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="&#x9;"/>
+				<Run Text="Grades can be assigned in letters (for example, A, B, C, D, or F), as a range (for example 1 to 6), as a percentage of a total number correct, as a number out of a possible total (for example out of 20 or 100), or as descriptors (excellent, great, satisfactory, needs improvement)."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="&#x9;"/>
+				<Run Text="In some countries, all grades from all current classes are averaged to create a grade point average (GPA) for the marking period. The GPA is calculated by taking the number of grade points a student earned in a given period of time divided by the total number of credits taken. The GPA can be used by potential employers or educational institutions to assess and compare applicants. A Cumulative Grade Point Average is a calculation of the average of all of a student's grades for all courses completed so far."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="GPA-&#x9;Grading Point Average"/>
+				<LineBreak/>
+				<Run Text="CGPA-&#x9;Cumulative Grading Point Average"/>
+				<LineBreak/>
+				<Run Text="SGPA-&#x9;Semester Grading Point Average"/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="Source:"/>
+				<LineBreak/>
+				<Run Text="http://en.wikipedia.org/wiki/Grading_(education)"/>
+            </TextBlock>
+            <TextBlock x:Name="Text3" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="540" Width="960" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" Visibility="Collapsed">
+				<Run Text="Want to know how this app works ??"/>
+				<LineBreak/>
+				<Run Text="Here is the description of the pages:"/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="* GPA: "/>
+				<Run Text="Calculate your Grading Point Average and the app saves your last selections and thus you don't have to give the information each time."/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="*SGPA: "/>
+				<Run Text="Calculate your GPA of every semester and find your CGPA in the Profile Page."/>
+				<LineBreak/>
+				<Run Text="Note: You must first fill your Info in Profile page to access this page."/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="*Scale Conversion: "/>
+				<Run Text="Convert your GPA from one scale to another."/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="*Profile: "/>
+				<Run Text="Keep your info and have track of your CGPA. This page also includes "/>
+				<Run Text="the following functionality :"/>
+				<LineBreak/>
+				<Run Text="# Enter your Info: This is for first-time users, who need to fill up their info to widely use this app."/>
+				<LineBreak/>
+				<Run Text="# Update Your Info: If you want to update your Info, you can do it here."/>
+				<LineBreak/>
+				<Run Text="# Know your Status: Track down your SGPA at a single page."/>
+				<LineBreak/>
+				<Run Text="# Delete Your Info: Deletes everything (Your info, GPA Record, SGPA), resets themes"/>
+				<LineBreak/>
+				<Run Text="# Keep track of the History: The selections made by you in GPA page is kept for better user-experience. However your can shut-it-down."/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="*About: "/>
+				<Run Text="Know about CGPA, functionality, features, author of this app and Privacy Policy."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run FontWeight="Bold" Text="Themes: "/>
+				<Run Text="At every page, you can find this button at top right corner. Here, you c"/>
+				<Run Text="an change the theme of the"/>
+				<Run Text=" page"/>
+				<Run Text=" to 12 different colors"/>
+				<Run Text=" or just put it on RANDOM."/>
+            </TextBlock>
+            <TextBlock x:Name="Text6" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="540" Width="960" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" Visibility="Collapsed">
+				<Run Text="The Privacy Policy of the App (CGPA-Tracker) covers the following statements:"/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="* This app uses Internet facility just to maintain the basic structure of the app."/>
+				<LineBreak/>
+				<Run Text="* This app does collect your personal information but store it in the local machine ONLY. This app however, does not share any of the personal data (including your CGPA and courses info etc.)."/>
+				<LineBreak/>
+				<Run Text="* This app does not use any of the folders, files stored on your machine but the data created while running of the app. This data, however, is not shared with anybody."/>
+				<LineBreak/>
+				<Run Text="* Neither me (the publisher) nor the app is responsible to any of your data loss or any unforeseen grievances."/>
+            </TextBlock>
+            <TextBlock x:Name="Text5" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="540" Width="960" FontFamily="Comic Sans MS" FontSize="20" Foreground="Black" Visibility="Collapsed">
+				<Run Text="&#x9;"/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="&#x9;Hi, I am "/>
+				<Run FontWeight="Bold" Text="Srujan Jha"/>
+				<Run Text=", and this is my FIRST app and since I am new to app development, I request my audience to kindly review this app and notify me about any crashes, requests, improvements, suggestions or anything. "/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="I am an engineering student at BITS-Pilani, Hyderabad Campus, India."/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run Text="You can send me an E-mail at "/>
+				<Run FontWeight="Bold" Text="srujanjha.jha@gmail.com"/>
+            </TextBlock>
+        </Grid>
+        <UI:AdControl x:Name="Ad4" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126764" HorizontalAlignment="Left" Height="90" Margin="328,538,0,0" Grid.Row="1" VerticalAlignment="Top" Width="728" IsAutoRefreshEnabled="true" ErrorOccurred="OnAdError"/>
+        <UI:AdControl x:Name="Ad3" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126766" HorizontalAlignment="Left" Height="250" Margin="722,21,0,0" VerticalAlignment="Top" Width="300" IsAutoRefreshEnabled="true" Grid.Row="1" ErrorOccurred="OnAdError"/>
+        <UI:AdControl x:Name="Ad2" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126766" HorizontalAlignment="Left" Height="250" Margin="368,21,0,0" VerticalAlignment="Top" Width="300" IsAutoRefreshEnabled="true" Grid.Row="1" ErrorOccurred="OnAdError"/>
+        <UI:AdControl x:Name="Ad5" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126766" HorizontalAlignment="Left" Height="250" Margin="368,283,0,0" VerticalAlignment="Top" Width="300" IsAutoRefreshEnabled="true" Grid.Row="1" ErrorOccurred="OnAdError"/>
+        <UI:AdControl x:Name="Ad6" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126766" HorizontalAlignment="Left" Height="250" Margin="722,283,0,0" VerticalAlignment="Top" Width="300" IsAutoRefreshEnabled="true" Grid.Row="1" ErrorOccurred="OnAdError"/>
+        <UI:AdControl x:Name="Ad1" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126765" HorizontalAlignment="Left" Height="600" Margin="1066,28,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" IsAutoRefreshEnabled="true" ErrorOccurred="OnAdError"/>
+        <CheckBox x:Name="CheckBox" Content="Remove Ads" HorizontalAlignment="Left" Margin="1234,56,0,0" VerticalAlignment="Top" Background="White" BorderBrush="Black" Foreground="Black" FontFamily="Comic Sans MS" FontSize="16" FontWeight="Bold" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <TextBlock x:Name="AdsText" HorizontalAlignment="Left" Margin="1190,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="47" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White"/>
+
+    </Grid>
+</common:LayoutAwarePage>

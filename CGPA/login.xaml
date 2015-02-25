@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="CGPA.login"
+    xmlns:local="using:CGPA"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="Black" >
+        <TextBlock Height="63" 
+            Foreground="White" 
+            HorizontalAlignment="Left" 
+            Margin="8,76,0,0" 
+            Name="infoTextBlock" 
+            VerticalAlignment="Top" 
+            Width="1164" />
+        <Image x:Name="imgResult" HorizontalAlignment="Left" Height="100" Margin="943,224,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="t1" HorizontalAlignment="Left" Margin="380,274,0,0" TextWrapping="Wrap" Text="enter first no." VerticalAlignment="Top" Width="147"/>
+        <TextBox x:Name="t2" HorizontalAlignment="Left" Margin="627,274,0,0" TextWrapping="Wrap" Text="Enter 2nd no.&#xD;&#xA;" VerticalAlignment="Top" Width="147" Height="32"/>
+        <TextBlock x:Name="Text1" HorizontalAlignment="Left" Margin="577,562,0,0" TextWrapping="Wrap" Text="Answer" VerticalAlignment="Top" Height="51" Width="373" FontFamily="Arial Black" FontSize="20"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="574,388,0,0" VerticalAlignment="Top" Height="79" Width="166" Background="#FF192D74" Foreground="White" RequestedTheme="Light" Click="button_Click_1" ClickMode="Hover" Style="{StaticResource TextSecondaryButtonStyle}" FontFamily="Shruti" FontSize="48"/>
+        <Rectangle x:Name="rectangle" HorizontalAlignment="Left" Height="64" Margin="745,365,0,0" Stroke="White" VerticalAlignment="Top" Width="205" PointerEntered="Rectangle_PointerEntered" PointerExited="Rectangle_PointerExited" PointerPressed="Rectangle_PointerPressed" PointerReleased="Rectangle_PointerReleased" StrokeThickness="3">
+            <Rectangle.Resources>
+                <Color x:Key="Color1">#FF385588</Color>
+            </Rectangle.Resources>
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF385588"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Margin="745,365,0,0" TextWrapping="Wrap" Text="Share" VerticalAlignment="Top" Height="64" Width="205" FontSize="48" TextAlignment="Center"/>
+    </Grid>
+</Page>

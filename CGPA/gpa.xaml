@@ -1,0 +1,612 @@
+﻿<common:LayoutAwarePage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CGPA"
+    xmlns:common="using:CGPA.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    xmlns:facebookControls="using:Facebook.Client.Controls"
+    x:Name="pageRoot"
+    x:Class="CGPA.gpa"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Grid" Style="{StaticResource LayoutRootStyle}" Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Image1" HorizontalAlignment="Left" Height="628" Margin="321,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1045" Stretch="Fill"/>
+        <ProgressRing x:Name="Progress" HorizontalAlignment="Left" Margin="684,213,0,0" Grid.Row="1" VerticalAlignment="Top" Height="142" Width="142" IsActive="True"/>
+        <!-- Back button and page title -->
+        <Grid x:Name="side" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="320" Grid.RowSpan="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Red" Offset="2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock HorizontalAlignment="Left" Margin="6,210,0,0" TextWrapping="Wrap" Text="Enter Number of Subjects/courses" VerticalAlignment="Top" Height="84" Width="201" FontSize="24" RenderTransformOrigin="0.458,1.005"/>
+            <ComboBox x:Name="Scenarios" Margin="212,220,0,0" VerticalAlignment="Top" Height="37" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="99">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="1" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="2" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="3" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="4" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="5" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="6" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="7" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="8" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="9" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="10" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="11" FontFamily="Comic Sans MS"/>
+                <ComboBoxItem Content="12" FontFamily="Comic Sans MS"/>
+            </ComboBox>
+            <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="100,280,0,0" VerticalAlignment="Top" Height="54" Width="127" Click="Submit_Click"/>
+            <TextBlock x:Name="TextBlock1" HorizontalAlignment="Left" Margin="32,425,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="99" Width="252" Visibility="Collapsed" FontFamily="Comic Sans MS" FontSize="30"/>
+            <UI:AdControl x:Name="Ad2" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126768" HorizontalAlignment="Left" Height="250" Margin="34,518,0,0" VerticalAlignment="Top" Width="250" IsAutoRefreshEnabled="true" ErrorOccurred="OnAdError"/>
+        </Grid>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Red" Offset="2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1564"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Margin="36,0,0,36"/>
+            <StackPanel HorizontalAlignment="Left" Height="130" Margin="111,10,0,0" VerticalAlignment="Top" Width="158">
+                <Image x:Name="welimg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+                <TextBlock x:Name="welcome" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hello, " VerticalAlignment="Top" FontSize="16" FontFamily="Comic Sans MS" Height="30" Width="158"/>
+            </StackPanel>
+            <TextBlock x:Name="pageTitle" Text="Calculate your GPA" Style="{StaticResource PageHeaderTextStyle}" Height="55" Margin="395,0,535,24" FontFamily="Comic Sans MS" FontSize="72" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform TranslateX="-2" TranslateY="8"/>
+                </TextBlock.RenderTransform>
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="#FF0A2E76" Offset="0.514"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <ComboBox x:Name="Theme" Margin="1234,10,208,99" SelectionChanged="Theme_SelectionChanged" SelectedIndex="0">
+                <ComboBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF74FF00"/>
+                        <GradientStop Color="#CCFF0000" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.BorderBrush>
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBoxItem Content="Black" Foreground="Black"/>
+                <ComboBoxItem Background="Black" Content="White" Foreground="White"/>
+                <ComboBoxItem Content="BING" FontWeight="Bold"/>
+                <ComboBoxItem Content="Browse" FontWeight="Bold" Tapped="ComboBoxItem_Tapped"/>
+                <ComboBoxItem Content="Green" Foreground="Green"/>
+                <ComboBoxItem Content="Blue" Foreground="Blue"/>
+                <ComboBoxItem Content="Red" Foreground="Red"/>
+                <ComboBoxItem Content="Pink" Foreground="Pink"/>
+                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
+                <ComboBoxItem Content="Brown" Foreground="Brown"/>
+                <ComboBoxItem Content="Orange" Foreground="Orange"/>
+                <ComboBoxItem Content="Purple" Foreground="Purple"/>
+                <ComboBoxItem Content="Silver" Foreground="Silver"/>
+                <ComboBoxItem Content="Gold" Foreground="Gold"/>
+                <ComboBoxItem Content="RANDOM" FontWeight="Bold"/>
+            </ComboBox>
+
+            <TextBlock x:Name="Themet" TextWrapping="Wrap" Text="Theme" FontFamily="Comic Sans MS" FontSize="22" Foreground="White" HorizontalAlignment="Left" Margin="1150,10,0,0"  VerticalAlignment="Top" Height="31" Width="87" RenderTransformOrigin="0.5,0.5">
+            </TextBlock>
+
+        </Grid>
+        <Popup x:Name="LightDismissAnimatedPopup" HorizontalOffset="10" VerticalOffset="10" IsLightDismissEnabled="True" Margin="321,213,33,212" Grid.Row="1">
+            <Popup.ChildTransitions>
+                <TransitionCollection>
+                    <PopupThemeTransition />
+                </TransitionCollection>
+            </Popup.ChildTransitions>
+            <Border BorderThickness="2" Width="994" Height="192">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="2"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,-2,8,8" Width="974" Height="182">
+                    <TextBlock x:Name="errortext" Text="Simple Popup" FontSize="24.667" Height="128" Width="954" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" >
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <Button x:Name="close" Content="Close" Click="CloseAnimatedPopupClicked" HorizontalAlignment="Stretch" Background="#FF212121" Height="48" Margin="329,0,341,0" />
+                </StackPanel>
+            </Border>
+        </Popup>
+        <ComboBox x:Name="ComboBox0" HorizontalAlignment="Left" Margin="728,130,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox01" HorizontalAlignment="Left" Margin="637,130,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox01_TextChanged" Height="32" Width="64" InputScope="Number" >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox00" HorizontalAlignment="Left" Margin="374,130,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox1" HorizontalAlignment="Left" Margin="728,213,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox11" HorizontalAlignment="Left" Margin="637,213,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number" TextChanged="TextBox11_TextChanged"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox10" HorizontalAlignment="Left" Margin="374,213,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox2" HorizontalAlignment="Left" Margin="728,298,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox21" HorizontalAlignment="Left" TextChanged="TextBox21_TextChanged" Margin="637,298,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" RenderTransformOrigin="0.038,0.59" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox20" HorizontalAlignment="Left" Margin="374,298,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox3" HorizontalAlignment="Left" Margin="728,384,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox31" HorizontalAlignment="Left" Margin="637,384,0,0" Grid.Row="1" TextChanged="TextBox31_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox30" HorizontalAlignment="Left" Margin="374,384,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox4" HorizontalAlignment="Left" Margin="728,465,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox41" HorizontalAlignment="Left" Margin="637,465,0,0" TextChanged="TextBox41_TextChanged" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox40" HorizontalAlignment="Left" Margin="374,465,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox5" HorizontalAlignment="Left" Margin="728,542,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox51" HorizontalAlignment="Left" Margin="637,542,0,0" TextChanged="TextBox51_TextChanged" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox50" HorizontalAlignment="Left" Margin="374,542,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox6" HorizontalAlignment="Left" Margin="1232,130,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox61" HorizontalAlignment="Left" Margin="1143,130,0,0" Grid.Row="1" TextChanged="TextBox61_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top"  Height="32" Width="64" InputScope="Number" >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox60" HorizontalAlignment="Left" Margin="876,130,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox7" HorizontalAlignment="Left" Margin="1232,213,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32" >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox71" HorizontalAlignment="Left" Margin="1143,213,0,0" Grid.Row="1" TextChanged="TextBox71_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox70" HorizontalAlignment="Left" Margin="876,213,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox8" HorizontalAlignment="Left" Margin="1232,298,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox81" HorizontalAlignment="Left" Margin="1143,298,0,0" Grid.Row="1" TextChanged="TextBox81_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" RenderTransformOrigin="0.038,0.59" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox80" HorizontalAlignment="Left" Margin="876,298,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox9" HorizontalAlignment="Left" Margin="1232,384,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox91" HorizontalAlignment="Left" Margin="1143,384,0,0" Grid.Row="1" TextChanged="TextBox91_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox90" HorizontalAlignment="Left" Margin="876,384,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox10" HorizontalAlignment="Left" Margin="1232,465,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox101" HorizontalAlignment="Left" Margin="1143,465,0,0" Grid.Row="1" TextChanged="TextBox101_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox100" HorizontalAlignment="Left" Margin="876,465,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="ComboBox11" HorizontalAlignment="Left" Margin="1232,542,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="32"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ComboBoxItem Content="A" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="A-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="B-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="C-" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="D" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="E" FontFamily="Comic Sans MS"/>
+            <ComboBoxItem Content="NC" FontFamily="Comic Sans MS"/>
+        </ComboBox>
+        <TextBox x:Name="TextBox111" HorizontalAlignment="Left" Margin="1143,542,0,0" Grid.Row="1" TextChanged="TextBox111_TextChanged" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="64" InputScope="Number"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox x:Name="TextBox110" HorizontalAlignment="Left" Margin="876,542,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.456" Height="32" Width="243"  >
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <TextBlock x:Name="TextBlock3" HorizontalAlignment="Left" Margin="374,47,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="452" FontFamily="Comic Sans MS" FontSize="22" Text="Enter your Subject         Credits   Grades&#x9;">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF3FF00"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock x:Name="TextBlock4" HorizontalAlignment="Left" Margin="876,47,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="457" FontFamily="Comic Sans MS" FontSize="22" Text="Enter your Subject         Credits   Grades&#x9;">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF3FF00"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock x:Name="AdsText" HorizontalAlignment="Left" Margin="1190,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Height="47" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="White"/>
+        <UI:AdControl x:Name="Ad1" ApplicationId="da2450a0-d64e-4037-9c07-5ad1dddc761f" AdUnitId="10126765" HorizontalAlignment="Left" Height="600" Margin="1066,28,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" IsAutoRefreshEnabled="true" ErrorOccurred="OnAdError"/>
+        <CheckBox x:Name="CheckBox" Content="Remove Ads" HorizontalAlignment="Left" Margin="1234,56,0,0" VerticalAlignment="Top" Background="White" BorderBrush="Black" Foreground="Black" FontFamily="Comic Sans MS" FontSize="16" FontWeight="Bold" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <Popup x:Name="share" Grid.Row="1" Margin="288,130,10,212" IsOpen="False" >
+            <Grid x:Name="fgrid" Background="#FFE5E5E5" Grid.Row="1" Width="1066" Height="287">
+                <StackPanel HorizontalAlignment="Right" Margin="0,53,929,65" Width="109">
+                    <facebookControls:ProfilePicture 
+                    x:Name="profilePicture"
+                    Width="75" 
+                    Height="75" 
+                    CropMode="Original" 
+                    ProfileId="{Binding CurrentSession.FacebookId, ElementName=loginButton}" />
+                    <TextBlock 
+                    HorizontalAlignment="Center"
+                    Text="{Binding CurrentUser.Name, ElementName=loginButton}" Foreground="Black" />
+                </StackPanel>
+                <facebookControls:LoginButton 
+        		x:Name="loginButton" 
+        		HorizontalAlignment="Center"
+        		VerticalAlignment="Top"
+        		Margin="225,162,673,0" ApplicationId="609970912370109" Permissions="user_about_me,read_stream,publish_stream"/>
+                <TextBlock HorizontalAlignment="Left" Margin="109,10,0,0" TextWrapping="Wrap" Text="Wanna let others know about your GPA, Share it on Facebook..." VerticalAlignment="Top" Height="43" Width="828" Foreground="Black" FontFamily="Comic Sans MS" FontSize="25" FontWeight="Bold"/>
+                <TextBox x:Name="Ftext" HorizontalAlignment="Left" Margin="140,104,0,0" TextWrapping="Wrap" Text="Want to add something..." VerticalAlignment="Top" Height="53" Width="822" />
+                <TextBlock x:Name="ftext" HorizontalAlignment="Left" Margin="140,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="741" Foreground="Black" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold">
+            	<Run Text="My"/>
+            	<Run Text=" GPA is&#xA;"/>
+                </TextBlock>
+                <TextBlock x:Name="ferror" HorizontalAlignment="Left" Margin="86,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="828" Foreground="Red" FontFamily="Comic Sans MS" FontSize="20" FontWeight="Bold" Text="An Error has occured. Please try after sometime...&#xA;" Visibility="Collapsed"/>
+                <Rectangle x:Name="rectangle" HorizontalAlignment="Left" Height="53" Margin="440,163,0,0" Stroke="White" VerticalAlignment="Top" Width="188" StrokeThickness="3" Fill="#FF385588" PointerEntered="TextBlock_PointerEntered" PointerExited="TextBlock_PointerExited" PointerPressed="TextBlock_PointerPressed" PointerReleased="TextBlock_PointerReleased" Tapped="OnShareButtonClick">
+                    <Rectangle.Resources>
+                        <Color x:Key="Color1">#FF385588</Color>
+                    </Rectangle.Resources>
+                </Rectangle>
+                <TextBlock HorizontalAlignment="Left" Margin="440,174,0,0" TextWrapping="Wrap" Text="Share" VerticalAlignment="Top" Height="39" Width="188" FontSize="24" TextAlignment="Center" FontFamily="Arial" PointerEntered="TextBlock_PointerEntered" PointerExited="TextBlock_PointerExited" PointerPressed="TextBlock_PointerPressed" PointerReleased="TextBlock_PointerReleased" Tapped="OnShareButtonClick"/>
+                <Rectangle x:Name="rectangle2" HorizontalAlignment="Left" Height="53" Margin="675,163,180,0" Stroke="White" VerticalAlignment="Top" Width="188" StrokeThickness="3" Fill="#FF385588" PointerEntered="TextBlock1_PointerEntered" PointerExited="TextBlock1_PointerExited" PointerPressed="TextBlock1_PointerPressed" PointerReleased="TextBlock1_PointerReleased" Tapped="OnShareButtonClick">
+                    <Rectangle.Resources>
+                        <Color x:Key="Color1">#FF385588</Color>
+                    </Rectangle.Resources>
+                </Rectangle>
+                <TextBlock HorizontalAlignment="Left" Margin="675,174,180,0" TextWrapping="Wrap" Text="Not Now" VerticalAlignment="Top" Height="39" Width="188" FontSize="24" TextAlignment="Center" FontFamily="Arial" PointerEntered="TextBlock1_PointerEntered" PointerExited="TextBlock1_PointerExited" PointerPressed="TextBlock1_PointerPressed" PointerReleased="TextBlock1_PointerReleased" Tapped="TextBlock_Tapped"/>
+
+            </Grid>
+        </Popup>
+
+
+    </Grid>
+</common:LayoutAwarePage>
+    
